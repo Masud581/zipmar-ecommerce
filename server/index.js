@@ -9,6 +9,11 @@ import connectDB from './config/connectDB.js';
 import userRouter from './route/user.route.js';
 import categoryRouter from './route/category.route.js';
 import uploadRouter from './route/upload.route.js';
+import subCategoryRouter from './route/subCategory.route.js';
+import productRouter from './route/product.route.js';
+import addressRouter from './route/address.route.js';
+import cartRouter from './route/cart.route.js';
+
 
 const app = express();
 
@@ -44,11 +49,34 @@ app.use('/api/category',categoryRouter)
 
 app.use("/api/file",uploadRouter)
 
+//subCategory routes
+app.use('/api/subCategory',subCategoryRouter)
+
+//Product routes
+app.use('/api/product',productRouter)
+
+//upload routes
+app.use('/api/upload',uploadRouter)
+
+//address routes
+app.use('/api/address',addressRouter)
+
+//cart routes
+app.use('/api/cart',cartRouter)
+
+
+
+
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(err.status || 500).json({ message: err.message });
 });
+
+
+
+
 
 // Database connection and server startup
 connectDB().then(() => {

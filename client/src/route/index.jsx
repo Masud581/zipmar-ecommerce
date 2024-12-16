@@ -16,6 +16,8 @@ import Category from '../pages/Category';
 import SubCategory from '../pages/SubCategory';
 import UploadProduct from '../pages/UploadProduct';
 import ProductAdmin from '../pages/ProductAdmin';
+import AdminPermision from '../layout/AdminPermision';
+import Product from '../pages/Product';
 
 
 const Router = createBrowserRouter([
@@ -64,16 +66,16 @@ const Router = createBrowserRouter([
                         element : <Address/>
                     },{
                         path : "category",
-                        element : <Category/>
+                        element : <AdminPermision> <Category/></AdminPermision> 
                     },{
                         path : "subcategory",
-                        element : <SubCategory/>
+                        element : <AdminPermision> <SubCategory/></AdminPermision>
                     },{
                         path : "upload-product",
-                        element : <UploadProduct/>
+                        element : <AdminPermision><UploadProduct/></AdminPermision>
                     },{
                         path : "product",
-                        element : <ProductAdmin/>                       
+                        element : <AdminPermision><ProductAdmin/></AdminPermision>                       
                     }
 
 
