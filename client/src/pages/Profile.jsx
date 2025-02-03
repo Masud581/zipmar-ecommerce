@@ -7,7 +7,7 @@ import SummaryApi from '../apis/SummaryApi';
 import AxiosToastError from '../utils/AxiosToastError';
 import toast from 'react-hot-toast';
 import { setUserDetails } from '../store/userSlice';
-import fetchUserDetails from '../utils/FetchUserDetails';
+import fetchUserDetails from '../utils/fetchUserDetails';
 import UserProfileAvatarEdit from '../components/userProfileAvatarEdit';
 
 

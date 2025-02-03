@@ -6,7 +6,7 @@ import Axios from '../utils/Axios';
 import SummaryApi from '../apis/SummaryApi';
 import AxiosToastError from '../utils/AxiosToastError';
 import { Link, useNavigate } from 'react-router-dom';
-import FetchUserDetails from '../utils/FetchUserDetails';
+import FetchUserDetails from '../utils/fetchUserDetails';
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from '../store/userSlice';
 

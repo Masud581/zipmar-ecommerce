@@ -1,25 +1,29 @@
 import axios from "axios";
-import { baseURL } from "../apis/SummaryApi";
+import SummaryApi , { baseURL } from "../apis/SummaryApi";
 
 const Axios = axios.create({
-    baseURL : "http://localhost:8080",
+    baseURL : baseURL,
     withCredentials : true
 })
-//sending access in the header
+
+//sending access token in the header
 Axios.interceptors.request.use(
     async(config)=>{
         const accessToken = localStorage.getItem('accesstoken')
+
         if(accessToken){
             config.headers.Authorization = `Bearer ${accessToken}`
         }
+
         return config
     },
     (error)=>{
         return Promise.reject(error)
     }
-
 )
-//extend the life span of the access token with the refresh token
+
+//extend the life span of access token with 
+// the help refresh
 Axios.interceptors.request.use(
     (response)=>{
         return response
@@ -63,6 +67,5 @@ const refreshAccessToken = async(refreshToken)=>{
         console.log(error)
     }
 }
-
 
 export default Axios

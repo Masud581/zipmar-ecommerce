@@ -1,6 +1,4 @@
-
-
-export const baseURL = "http://localhost:8080"
+export const baseURL = import.meta.env.VITE_API_URL
 
 const SummaryApi = {
     register : {
@@ -11,35 +9,35 @@ const SummaryApi = {
         url : '/api/user/login',
         method : 'post'
     },
-    forgotpassword: {
-        url : '/api/user/forgot-password',
+    forgot_password : {
+        url : "/api/user/forgot-password",
         method : 'put'
     },
     forgot_password_otp_verification : {
-        url : '/api/user/verify-forgot-password-otp',
+        url : 'api/user/verify-forgot-password-otp',
         method : 'put'
     },
     resetPassword : {
-        url : '/api/user/reset-password',
+        url : "/api/user/reset-password",
         method : 'put'
-    } ,
+    },
     refreshToken : {
-        url : '/api/user/refresh-token',
+        url : 'api/user/refresh-token',
         method : 'post'
     },
-    userDetails :{
+    userDetails : {
         url : '/api/user/user-details',
-        method : 'get'
+        method : "get"
     },
     logout : {
-        url : '/api/user/logout',
+        url : "/api/user/logout",
         method : 'get'
     },
     uploadAvatar : {
-        url : '/api/user/upload-avatar',
+        url : "/api/user/upload-avatar",
         method : 'put'
     },
-    updateUserDetails: {
+    updateUserDetails : {
         url : '/api/user/update-user',
         method : 'put'
     },
@@ -52,7 +50,7 @@ const SummaryApi = {
         method : 'post'
     },
     getCategory : {
-        url : '/api/category/get-category',
+        url : '/api/category/get',
         method : 'get'
     },
     updateCategory : {
@@ -111,7 +109,50 @@ const SummaryApi = {
         url : '/api/product/search-product',
         method : 'post'
     },
-  
+    addTocart : {
+        url : "/api/cart/create",
+        method : 'post'
+    },
+    getCartItem : {
+        url : '/api/cart/get',
+        method : 'get'
+    },
+    updateCartItemQty : {
+        url : '/api/cart/update-qty',
+        method : 'put'
+    },
+    deleteCartItem : {
+        url : '/api/cart/delete-cart-item',
+        method : 'delete'
+    },
+    createAddress : {
+        url : '/api/address/create',
+        method : 'post'
+    },
+    getAddress : {
+        url : '/api/address/get',
+        method : 'get'
+    },
+    updateAddress : {
+        url : '/api/address/update',
+        method : 'put'
+    },
+    disableAddress : {
+        url : '/api/address/disable',
+        method : 'delete'
+    },
+    CashOnDeliveryOrder : {
+        url : "/api/order/cash-on-delivery",
+        method : 'post'
+    },
+    payment_url : {
+        url : "/api/order/checkout",
+        method : 'post'
+    },
+    getOrderItems : {
+        url : '/api/order/order-list',
+        method : 'get'
+    }
 }
 
 export default SummaryApi
